@@ -16,10 +16,10 @@ test("has length property", () => {
 //   expect(ship1.tiles[0]).toEqual("hit");
 // });
 
-// test("sinks the ship", () => {
-//   let ship1 = Ship(3);
-//   ship1.hit(0);
-//   ship1.hit(1);
-//   ship1.hit(2);
-//   expect(ship1.isSunk).toBeTruthy();
-// });
+test("sinks the ship", () => {
+  let ship1 = Ship(3);
+  ship1.hit(0);
+  ship1.hit(1);
+  ship1.hit(2);
+  expect(ship1.isSunk).toBeTruthy();
+});

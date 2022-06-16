@@ -11,10 +11,10 @@ const Ship = (length) => {
         break;
       }
       if (i == length - 1) {
-        return "dead";
+        return true;
       }
     }
-    return "alive";
+    return false;
   };
 
   const hit = (hitCoord) => {
