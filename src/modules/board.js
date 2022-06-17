@@ -9,6 +9,9 @@ const Board = () => {
     return arr;
   }
 
+  function placeShip(shipLength, startingCoord, direction) {}
+  function receiveAttack(col, row) {}
+
   return { make2dArray };
 };
 
