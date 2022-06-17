@@ -1,4 +1,4 @@
-//import Ship from "./ship";
+import Ship from "./ship";
 
 const Board = () => {
   function make2dArray(cols, rows) {
@@ -6,14 +6,14 @@ const Board = () => {
     for (let i = 0; i < arr.length; i++) {
       arr[i] = new Array(rows);
     }
-    console.log(arr);
+    return arr;
   }
 
   return { make2dArray };
 };
 
-//export default Board;
+export default Board;
 
-newBoard = Board();
+// newBoard = Board();
 
-newBoard.make2dArray(10, 10);
+// newBoard.make2dArray(10, 10);
