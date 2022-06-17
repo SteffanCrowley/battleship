@@ -25,13 +25,3 @@ const Ship = (length) => {
 };
 
 export default Ship;
-
-// const GameboardFactory = () => {};
-
-// const enterprise = Ship(3);
-
-// enterprise.hit(0);
-// enterprise.hit(1);
-// enterprise.hit(2);
-
-// console.log(enterprise.isSunk());
