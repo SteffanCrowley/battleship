@@ -3,11 +3,11 @@ const Ship = (length) => {
     return length;
   }
 
-  const shipPos = new Array(length);
+  const tiles = new Array(length);
 
   function isSunk() {
     for (let i = 0; i < length; i++) {
-      if (shipPos[i] !== "X") {
+      if (tiles[i] !== "X") {
         break;
       }
       if (i == length - 1) {
@@ -18,10 +18,10 @@ const Ship = (length) => {
   }
 
   function hit(hitCoord) {
-    shipPos[hitCoord] = "X";
+    tiles[hitCoord] = "X";
   }
 
-  return { getLength, hit, isSunk };
+  return { getLength, hit, isSunk, tiles };
 };
 
 export default Ship;

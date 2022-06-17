@@ -5,16 +5,16 @@ test("has length property", () => {
   expect(ship1.getLength()).toBe(4);
 });
 
-// test("creates ship tiles", () => {
-//   let ship1 = Ship(4);
-//   expect(ship1.tiles).toEqual([0, 1, 2, 3]);
-// });
+test("creates ship tiles", () => {
+  const pinta = Ship(4);
+  expect(pinta.tiles).toEqual([undefined, undefined, undefined, undefined]);
+});
 
-// test("hits the ship", () => {
-//   let ship1 = Ship(4);
-//   ship1.hit(0);
-//   expect(ship1.tiles[0]).toEqual("hit");
-// });
+test("hits the ship", () => {
+  let ship1 = Ship(4);
+  ship1.hit(0);
+  expect(ship1.tiles[0]).toEqual("X");
+});
 
 test("sinks the ship", () => {
   const enterprise = Ship(3);
