@@ -17,9 +17,16 @@ test("has length property", () => {
 // });
 
 test("sinks the ship", () => {
-  let ship1 = Ship(3);
-  ship1.hit(0);
-  ship1.hit(1);
-  ship1.hit(2);
-  expect(ship1.isSunk).toBeTruthy();
+  const enterprise = Ship(3);
+  enterprise.hit(0);
+  enterprise.hit(1);
+  enterprise.hit(2);
+  expect(enterprise.isSunk()).toBe(true);
+});
+
+test("sinks the ship", () => {
+  const nina = Ship(3);
+  nina.hit(0);
+  nina.hit(1);
+  expect(nina.isSunk()).toBe(false);
 });
