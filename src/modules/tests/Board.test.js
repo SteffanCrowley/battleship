@@ -8,13 +8,13 @@ test("Creates board and is expected length", () => {
 test("Place ship on board", () => {
   const newBoard = Board();
   let oneArray = newBoard.make2dArray(5, 10);
-  let secArray = newBoard.placeShip(5, 2, 0, 10, oneArray);
+  let secArray = newBoard.placeShip(5, 2, 0, "x", oneArray);
   expect(secArray[0][4]).toBe("O");
 });
 
 test("test an area that does NOT have ship", () => {
   const newBoard = Board();
   let oneArray = newBoard.make2dArray(5, 10);
-  let secArray = newBoard.placeShip(5, 2, 0, 10, oneArray);
+  let secArray = newBoard.placeShip(5, 2, 0, "x", oneArray);
   expect(secArray[1][4]).toBe(undefined);
 });
