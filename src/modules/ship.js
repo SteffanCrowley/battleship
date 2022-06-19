@@ -1,6 +1,10 @@
-const Ship = (length) => {
+const Ship = (length, symbol) => {
   function getLength() {
     return length;
+  }
+
+  function getMark() {
+    return symbol;
   }
 
   const tiles = new Array(length);
@@ -21,7 +25,7 @@ const Ship = (length) => {
     tiles[hitCoord] = "X";
   }
 
-  return { getLength, hit, isSunk, tiles };
+  return { getLength, hit, isSunk, tiles, getMark };
 };
 
 export default Ship;

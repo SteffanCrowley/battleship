@@ -9,29 +9,30 @@ const Board = () => {
     return arr;
   }
 
-  function placeShip(shipLength, startCol, startRow, direction, arr) {
+  function placeShip(ship, startCol, startRow, direction, arr) {
     if (direction == "x") {
-      for (let i = 0; i < shipLength; i++) {
-        arr[startRow][i + startCol] = "O";
+      for (let i = 0; i < ship.getLength(); i++) {
+        arr[startRow][i + startCol] = ship.getMark();
       }
       console.log(arr);
     } else if (direction == "-x") {
-      for (let i = 0; i < shipLength; i++) {
-        arr[startRow][startCol - i] = "O";
+      for (let i = 0; i < ship.getLength(); i++) {
+        arr[startRow][startCol - i] = ship.getMark();
       }
       console.log(arr);
     } else if (direction == "y") {
-      for (let i = 0; i < shipLength; i++) {
-        arr[startRow - i][startCol] = "O";
+      for (let i = 0; i < ship.getLength(); i++) {
+        arr[startRow - i][startCol] = ship.getMark();
       }
       console.log(arr);
     } else if (direction == "-y") {
-      for (let i = 0; i < shipLength; i++) {
-        arr[startRow + i][startCol] = "O";
+      for (let i = 0; i < ship.getLength(); i++) {
+        arr[startRow + i][startCol] = ship.getMark();
       }
       console.log(arr);
     }
   }
+
   function receiveAttack(col, row, arr) {
     if (arr[row][col] == "O") {
       arr[row][col] = "X";
