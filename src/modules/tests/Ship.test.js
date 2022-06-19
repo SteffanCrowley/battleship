@@ -16,17 +16,17 @@ test("hits the ship", () => {
   expect(ship1.tiles[0]).toEqual("X");
 });
 
-test("sinks the ship", () => {
-  const enterprise = Ship(3, "C");
-  enterprise.hit(0);
-  enterprise.hit(1);
-  enterprise.hit(2);
-  expect(enterprise.isSunk()).toBe(true);
-});
+// test("sinks the ship", () => {
+//   const enterprise = Ship(3, "C");
+//   enterprise.hit(0);
+//   enterprise.hit(1);
+//   enterprise.hit(2);
+//   expect(enterprise.isSunk()).toBe(true);
+// });
 
-test("sinks the ship", () => {
-  const nina = Ship(3, "C");
-  nina.hit(0);
-  nina.hit(1);
-  expect(nina.isSunk()).toBe(false);
-});
+// test("sinks the ship", () => {
+//   const nina = Ship(3, "C");
+//   nina.hit(0);
+//   nina.hit(1);
+//   expect(nina.isSunk()).toBe(false);
+// });

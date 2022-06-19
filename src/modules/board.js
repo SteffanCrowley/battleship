@@ -34,12 +34,32 @@ const Board = () => {
   }
 
   function receiveAttack(col, row, arr) {
-    if (arr[row][col] == "O") {
+    if (arr[row][col] == "P") {
       arr[row][col] = "X";
+      patrol--;
+      isSunk(patrol);
+    } else if (arr[row][col] == "C") {
+      arr[row][col] = "X";
+      cruiser--;
+      isSunk(cruiser);
+    } else if (arr[row][col] == "B") {
+      arr[row][col] = "X";
+      battleship--;
+      isSunk(battleship);
     } else if (arr[row][col] == undefined) {
       arr[row][col] = "M";
     }
   }
+
+  function isSunk(shipType) {
+    if (shipType == 0) {
+      console.log(shipType + " is sunk");
+    }
+  }
+
+  let patrol = 2;
+  let cruiser = 3;
+  let battleship = 4;
 
   return { make2dArray, placeShip, receiveAttack };
 };
