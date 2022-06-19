@@ -1,4 +1,4 @@
-//import Ship from "./ship";
+import Ship from "./ship";
 
 const Board = () => {
   function make2dArray(rows, cols) {
@@ -28,6 +28,12 @@ const Board = () => {
       }
       console.log(arr);
       return arr;
+    } else if (direction == "-y") {
+      for (let i = 0; i < shipLength; i++) {
+        arr[startRow + i][startCol] = "O";
+      }
+      console.log(arr);
+      return arr;
     }
   }
   function receiveAttack(col, row) {}
@@ -35,10 +41,14 @@ const Board = () => {
   return { make2dArray, placeShip };
 };
 
-//export default Board;
+export default Board;
 
-newBoard = Board();
+// newBoard = Board();
 
-let oneArray = newBoard.make2dArray(10, 10);
+// let oneArray = newBoard.make2dArray(10, 10);
 
-newBoard.placeShip(4, 9, 5, "y", oneArray);
+// newBoard.placeShip(5, 0, 0, "-y", oneArray);
+
+// newBoard.placeShip(5, 1, 0, "-y", oneArray);
+
+// newBoard.placeShip(5, 2, 0, "-y", oneArray);

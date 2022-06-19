@@ -18,3 +18,12 @@ test("test an area that does NOT have ship", () => {
   let secArray = newBoard.placeShip(5, 2, 0, "x", oneArray);
   expect(secArray[1][4]).toBe(undefined);
 });
+
+test("test placement of ships", () => {
+  const newBoard = Board();
+  let oneArray = newBoard.make2dArray(10, 10);
+  newBoard.placeShip(5, 0, 0, "-y", oneArray);
+  newBoard.placeShip(5, 1, 0, "-y", oneArray);
+  newBoard.placeShip(5, 2, 0, "-y", oneArray);
+  expect(oneArray[1][1]).toBe("O");
+});
