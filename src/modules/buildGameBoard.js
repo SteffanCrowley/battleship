@@ -1,3 +1,5 @@
+import { attack } from "./buildPage";
+
 const main = document.createElement("div");
 main.classList.add("main");
 document.body.appendChild(main);
@@ -16,11 +18,15 @@ function buildGameBoard(array) {
       square.classList.add("square");
       square.style.width = `${50}px`;
       square.style.height = `${50}px`;
+      square.id = array[i][j];
       let mark = array[i][j];
       paintBoard(mark, square);
       container.append(square);
     }
   }
+  const divs = document.querySelectorAll(".square");
+
+  divs.forEach((sq) => sq.addEventListener("click", test));
 }
 
 function buildGameBoard2(array) {
@@ -47,6 +53,11 @@ function paintBoard(mark, square) {
   } else if (mark == "P" || mark == "C" || mark == "B") {
     square.classList.add("ship");
   }
+}
+
+function test(e) {
+  console.log(e.path[0].id);
+  e.stopPropagation();
 }
 
 export { buildGameBoard, buildGameBoard2 };

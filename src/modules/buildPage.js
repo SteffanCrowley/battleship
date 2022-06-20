@@ -27,7 +27,7 @@ function build() {
   const cruiser = Ship(3, "C");
   const battleship = Ship(4, "B");
 
-  newBoard.placeShip(patrol, 0, 0, "-y", oneArray);
+  newBoard.placeShip(patrol, 5, 0, "-y", oneArray);
   newBoard.placeShip(cruiser, 1, 0, "-y", oneArray);
   newBoard.placeShip(battleship, 0, 5, "x", oneArray);
 
@@ -35,17 +35,23 @@ function build() {
   newBoard2.placeShip(cruiser, 3, 0, "-y", twoArray);
   newBoard2.placeShip(battleship, 2, 8, "x", twoArray);
 
-  newBoard.receiveAttack(0, 0, oneArray);
-  newBoard.receiveAttack(0, 1, oneArray);
-  newBoard.receiveAttack(5, 5, oneArray);
-  newBoard.receiveAttack(9, 9, oneArray);
-  newBoard.receiveAttack(0, 5, oneArray);
+  // newBoard.receiveAttack(0, 0, oneArray);
+  // newBoard.receiveAttack(0, 1, oneArray);
+  // newBoard.receiveAttack(5, 5, oneArray);
+  // newBoard.receiveAttack(9, 9, oneArray);
+  // newBoard.receiveAttack(0, 5, oneArray);
 
-  newBoard2.receiveAttack(0, 0, twoArray);
-  newBoard2.receiveAttack(0, 1, twoArray);
-  newBoard2.receiveAttack(5, 5, twoArray);
-  newBoard2.receiveAttack(9, 9, twoArray);
-  newBoard2.receiveAttack(0, 5, twoArray);
+  // newBoard2.receiveAttack(0, 0, twoArray);
+  // newBoard2.receiveAttack(0, 1, twoArray);
+  // newBoard2.receiveAttack(5, 5, twoArray);
+  // newBoard2.receiveAttack(9, 9, twoArray);
+  // newBoard2.receiveAttack(0, 5, twoArray);
+
+  // function attack(e) {
+  //   //newBoard.receiveAttack(0, 5, oneArray);
+  //   console.log(e);
+  //   e.stopPropagation();
+  // }
 
   buildHeader();
   buildGameBoard(oneArray);
