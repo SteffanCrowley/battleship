@@ -1,3 +1,5 @@
+import { buildGameBoard } from "./buildGameBoard";
+
 function buildHeader() {
   const element = document.createElement("div");
   element.classList.add("header");
@@ -13,6 +15,7 @@ function buildFooter() {
 
 function build() {
   buildHeader();
+  buildGameBoard();
   buildFooter();
 }
 

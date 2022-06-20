@@ -7,25 +7,20 @@ const Ship = (length, symbol) => {
     return symbol;
   }
 
-  const tiles = new Array(length);
+  const lifePoints = length;
 
-  // function isSunk() {
-  //   for (let i = 0; i < length; i++) {
-  //     if (tiles[i] !== "X") {
-  //       break;
-  //     }
-  //     if (i == length - 1) {
-  //       return true;
-  //     }
-  //   }
-  //   return false;
-  // }
-
-  function hit(hitCoord) {
-    tiles[hitCoord] = "X";
+  function isSunk(lifePoints) {
+    if (lifePoints == 0) {
+      console.log(symbol + " is sunk!");
+    }
   }
 
-  return { getLength, hit, tiles, getMark };
+  function hit() {
+    lifePoints--;
+    isSunk(lifePoints);
+  }
+
+  return { getLength, hit, getMark };
 };
 
 export default Ship;
