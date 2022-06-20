@@ -37,3 +37,15 @@ body {
   border-radius: 1px;
   background: white;
 }
+
+.ship {
+  background: rgba(161, 161, 161, 0.603);
+}
+
+.hit {
+  background: rgb(255, 39, 39);
+}
+
+.miss {
+  background: rgb(0, 0, 0);
+}
