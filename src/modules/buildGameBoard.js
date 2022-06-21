@@ -55,6 +55,7 @@ function beginGame() {
   }
 
   function buildGameBoard2(array) {
+    container2.innerHTML = "";
     for (let i = 0; i < 10; i++) {
       for (let j = 0; j < 10; j++) {
         const square = document.createElement("div");
@@ -86,8 +87,15 @@ function beginGame() {
       Number(e.path[0].id[0]),
       oneArray
     );
-
     buildGameBoard(oneArray);
+
+    newBoard2.receiveAttack(
+      Math.floor(Math.random() * 9),
+      Math.floor(Math.random() * 9),
+      twoArray
+    );
+    buildGameBoard2(twoArray);
+
     e.stopPropagation();
   }
 }
