@@ -42,9 +42,8 @@ function beginGame() {
         square.classList.add("square");
         square.style.width = `${50}px`;
         square.style.height = `${50}px`;
-        square.id = [i, j];
-
         let mark = array[i][j];
+        square.id = [i, j, mark];
         paintBoard(mark, square);
         container.append(square);
       }
@@ -82,29 +81,24 @@ function beginGame() {
   }
 
   function attack(e) {
-    newBoard.receiveAttack(
-      Number(e.path[0].id[2]),
-      Number(e.path[0].id[0]),
-      oneArray
-    );
-    buildGameBoard(oneArray);
+    if (e.path[0].id[4] !== "M" && e.path[0].id[4] !== "X") {
+      newBoard.receiveAttack(
+        Number(e.path[0].id[2]),
+        Number(e.path[0].id[0]),
+        oneArray
+      );
+      buildGameBoard(oneArray);
 
-    newBoard2.receiveAttack(
-      Math.floor(Math.random() * 9),
-      Math.floor(Math.random() * 9),
-      twoArray
-    );
-    buildGameBoard2(twoArray);
+      newBoard2.receiveAttack(
+        Math.floor(Math.random() * 9),
+        Math.floor(Math.random() * 9),
+        twoArray
+      );
+      buildGameBoard2(twoArray);
 
-    e.stopPropagation();
+      e.stopPropagation();
+    }
   }
 }
 
 export { beginGame };
-
-// newBoard2.receiveAttack(0, 0, twoArray);
-// newBoard2.receiveAttack(0, 1, twoArray);
-// newBoard2.receiveAttack(5, 5, twoArray);
-// newBoard2.receiveAttack(9, 9, twoArray);
-// newBoard2.receiveAttack(0, 5, twoArray);
-// buildGameBoard2(twoArray);

@@ -37,23 +37,23 @@ const Board = () => {
     if (arr[row][col] == "P") {
       arr[row][col] = "X";
       patrol--;
-      isSunk(patrol);
+      isSunk(patrol, "patrol");
     } else if (arr[row][col] == "C") {
       arr[row][col] = "X";
       cruiser--;
-      isSunk(cruiser);
+      isSunk(cruiser, "cruiser");
     } else if (arr[row][col] == "B") {
       arr[row][col] = "X";
       battleship--;
-      isSunk(battleship);
+      isSunk(battleship, "battleship");
     } else if (arr[row][col] == undefined) {
       arr[row][col] = "M";
     }
   }
 
-  function isSunk(shipType) {
+  function isSunk(shipType, string) {
     if (shipType == 0) {
-      console.log(shipType + " is sunk");
+      console.log(string + " is sunk");
     }
   }
 
@@ -65,13 +65,3 @@ const Board = () => {
 };
 
 export default Board;
-
-// newBoard = Board();
-
-// let oneArray = newBoard.make2dArray(10, 10);
-
-// newBoard.placeShip(5, 0, 0, "-y", oneArray);
-
-// newBoard.placeShip(5, 1, 0, "-y", oneArray);
-
-// newBoard.placeShip(5, 2, 0, "-y", oneArray);
